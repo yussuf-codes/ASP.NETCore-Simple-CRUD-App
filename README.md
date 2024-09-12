@@ -1,6 +1,6 @@
 ## 🚀 Run:
 
-1. Install Entity Framework Core tools
+1. Run the project
 
     ```shell
     dotnet run --project Test
