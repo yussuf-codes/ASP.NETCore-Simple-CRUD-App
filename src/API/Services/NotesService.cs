@@ -36,7 +36,7 @@ public class NotesService
     public void Update(int id, Note obj)
     {
         if (id != obj.Id)
-            throw new InvalidOperationException();
+            throw new BadRequestException();
         if (!_repository.Exists(id))
             throw new NotFoundException();
         _repository.Update(id, obj);

@@ -11,7 +11,7 @@ namespace API.Controllers;
 public class NotesController : ControllerBase
 {
     private readonly NotesService _notesService;
-    
+
     public NotesController(NotesService notesService)
     {
         _notesService = notesService;
@@ -51,7 +51,7 @@ public class NotesController : ControllerBase
     public IActionResult Post(Note obj)
     {
         Note note = _notesService.Add(obj);
-        return CreatedAtRoute(nameof(Get), new { id = note.Id }, note);
+        return CreatedAtAction(nameof(Get), new { id = note.Id }, note);
     }
 
     [HttpPut("{id:int}")]
@@ -62,7 +62,7 @@ public class NotesController : ControllerBase
             _notesService.Update(id, obj);
             return NoContent();
         }
-        catch (InvalidOperationException)
+        catch (BadRequestException)
         {
             return BadRequest();
         }

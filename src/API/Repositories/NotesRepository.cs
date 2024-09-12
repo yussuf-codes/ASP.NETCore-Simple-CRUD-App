@@ -11,8 +11,8 @@ public class NotesRepository : INotesRepository
 
     private readonly List<Note> _notes = new()
     {
-        new Note() { Id = 1, Title = "SOLID Principles", Body = "" },
-        new Note() { Id = 2, Title = "Design Patterns", Body = "" }
+        new Note() { Id = 1, Title = "Shopping", Body = "Buy some coffee" },
+        new Note() { Id = 2, Title = "SOLID Principles", Body = "SIP, OCP, LSP, ISP, DIP" }
     };
 
     private int Index(int id)
